@@ -1,6 +1,6 @@
 name: ViewInv
 version: ${project.version}
-main: author404e.viewinv.ViewInv
+main: com.xbaimiao.viewinv.ViewInv
 api-version: 1.16
 authors: [ 404E ,xbaimiao ]
 depend: [ AmazingBot ]

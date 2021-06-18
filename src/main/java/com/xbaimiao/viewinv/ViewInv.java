@@ -1,4 +1,4 @@
-package author404e.viewinv;
+package com.xbaimiao.viewinv;
 
 import org.bukkit.Bukkit;
 import org.bukkit.command.PluginCommand;
@@ -11,13 +11,14 @@ public final class ViewInv extends JavaPlugin {
     public void onEnable() {
         instance = this;
         saveDefaultConfig();
-        Bukkit.getPluginManager().registerEvents(new Events(), this);
-        setCommand("vi");
-        setCommand("viewinv");
+        Bukkit.getPluginManager().registerEvents(new MessageEvents(), this);
+        regCommand("vi");
+        regCommand("viewinv");
     }
 
-    private void setCommand(String command) {
+    private void regCommand(String command) {
         PluginCommand c = instance.getCommand(command);
-        if (c != null) c.setExecutor(new Cmd());
+        if (c != null) c.setExecutor(new ReloadCommands());
     }
+
 }
